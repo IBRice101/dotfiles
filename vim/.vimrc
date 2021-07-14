@@ -99,3 +99,5 @@
         " save and run python with f5 (second for if in insert mode)
             autocmd FileType python map <buffer> <F5> :w<CR>:exec '!python' shellescape(@%, 1)<CR>
             autocmd FileType python imap <buffer> <F5> <esc>:w<CR>:exec '!python' shellescape(@%, 1)<CR>
+        " comment out selected lines (in visual moe)
+            autocmd FileType python noremap <F4> :norm I#<CR>
