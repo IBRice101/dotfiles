@@ -15,6 +15,7 @@
 " colour scheme
     syntax enable
     colorscheme gruvbox
+    set background=dark
 
 " tabs are 4 spaces
     set expandtab
