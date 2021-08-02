@@ -84,12 +84,6 @@
     " folds code using spacebar instead of za combination
         nnoremap <space> za 
     
-" refactor variables etc
-    " for local change
-        nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
-    " for global change 
-        nnoremap gR gD:%s/<C-R>///gc<left><left><left>
-
 " creates tags file an allows you to jump to function definitions etc
     command! MakeTags !ctags --recurse .
     " - Use Ctrl-] to jump to tag under cursor
