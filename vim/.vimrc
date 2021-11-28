@@ -10,7 +10,9 @@
     set encoding=utf-8
     set backspace=2
     filetype plugin on
+    set omnifunc=syntaxcomplete#Complete    "language specific text completion with <C-X><C-O>
     set showcmd
+    set nrformats+=alpha    " treats all characters as numbers (can increment/decrement)
     
 " colour scheme
     syntax enable
@@ -46,6 +48,8 @@
     set hlsearch
 " Ignore case when searching 
     set ignorecase
+" case sensitive when upercase character included
+    set smartcase 
 
 " shows an autocomplete menu when typing a command
     set wildmenu
@@ -82,8 +86,12 @@
     set foldmethod=indent
 
     " folds code using spacebar instead of za combination
-        nnoremap <space> za 
-    
+        nnoremap <space> za
+
+" increment/decrement numbers using + and -
+    nnoremap + <C-a>
+    nnoremap - <C-x>
+
 " creates tags file an allows you to jump to function definitions etc
     command! MakeTags !ctags --recurse .
     " - Use Ctrl-] to jump to tag under cursor
@@ -96,11 +104,20 @@
             autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_gb
             autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_gb
 
+    " web dev
+        " html
+            " execute html file from html file
+                autocmd FileType html map <buffer> <F5> :w<CR>:exec '!firefox' shellescape(@%, 1)<CR>
+                autocmd FileType html imap <buffer> <F5> <esc>:w<CR>:exec '!firefox' shellescape(@%, 1)<CR>
+        " js
+            " comment out selected lines (in visual mode)
+                autocmd FileType javascript noremap <F4> :norm I//<CR>
+
     " python
-        " save and run python with f5 (second for if in insert mode)
+        " save and run with f5 (second for if in insert mode)
             autocmd FileType python map <buffer> <F5> :w<CR>:exec '!python' shellescape(@%, 1)<CR>
             autocmd FileType python imap <buffer> <F5> <esc>:w<CR>:exec '!python' shellescape(@%, 1)<CR>
-        " comment out selected lines (in visual moe)
-            autocmd FileType python noremap <F4> :norm I#<CR>       
+        " comment out selected lines (in visual mode)
+            autocmd FileType python noremap <F4> :norm I#<CR>
         " 80 column border
             autocmd FileType python set colorcolumn=80
