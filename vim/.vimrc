@@ -121,3 +121,11 @@
             autocmd FileType python noremap <F4> :norm I#<CR>
         " 80 column border
             autocmd FileType python set colorcolumn=80
+
+    " skeletons
+        augroup skeleton
+            autocmd!
+            " adds shebangs to script files
+            autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh
+            autocmd BufNewFile *.py 0r ~/.vim/templates/skeleton.py
+        augroup END
