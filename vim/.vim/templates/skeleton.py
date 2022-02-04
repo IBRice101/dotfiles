@@ -7,5 +7,3 @@ Auth:
 Date: 
 """
 
-if __name__ == __main:
-
