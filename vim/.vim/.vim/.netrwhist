@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/isaac/.vim/templates'
+let g:netrw_dirhist_6='/home/isaac/.vim'
+let g:netrw_dirhist_5='/run/media/isaac/IBRICE/Year1/CMP109-T1-B+/PracticalGroups/Lab11+12/TCPTxt'
+let g:netrw_dirhist_4='/run/media/isaac/IBRICE/Year3/CMP308-T1/PracticalGroups/Assessment/Code/PEPrototype/Scripts'
+let g:netrw_dirhist_3='/run/media/isaac/IBRICE/Year3/CMP308-T1/PracticalGroups/Assessment/Code/PEPrototype'
+let g:netrw_dirhist_2='/run/media/isaac/IBRICE/Year3/CMP308-T1/PracticalGroups/Assessment/Code/PEPrototype/Scripts'
+let g:netrw_dirhist_1='/run/media/isaac/IBRICE/Year3/CMP308-T1/PracticalGroups/Assessment/Code/PEPrototype'
+let g:netrw_dirhist_0='/run/media/isaac/IBRICE/Year3/CMP308-T1/PracticalGroups/Assessment/Code/PEPrototype/.git'
+let g:netrw_dirhist_9='/run/media/isaac/IBRICE/Year3/CMP308-T1/PracticalGroups/Assessment/Code/PEPrototype/.git/logs'
+let g:netrw_dirhist_8='/run/media/isaac/IBRICE/Year3/CMP308-T1/PracticalGroups/Assessment/Code/PEPrototype/.git'
