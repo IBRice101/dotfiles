@@ -95,6 +95,8 @@ Plug 'wbthomason/packer.nvim' " package manager
 Plug 'lukas-reineke/indent-blankline.nvim' " indent guides
 Plug 'romgrk/barbar.nvim' " tablines
 Plug 'neovim/nvim-lspconfig' " collection of configs for the language server protocol client
+Plug 'vimwiki/vimwiki' " a personal wiki plugin
+Plug 'lervag/vimtex' " a LaTeX plugin
 
 call plug#end()
 
@@ -146,12 +148,14 @@ call plug#end()
         lua require'lspconfig'.clangd.setup{}
         lua require'lspconfig'.bashls.setup{}
         lua require'lspconfig'.rls.setup{}
+        lua require'lspconfig'.asm_lsp.setup{}
 
 " language specific settings
     " plaintext and markdown
         " spell check for markdown and txt files
             autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_gb
             autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_gb
+            autocmd BufRead,BufNewFile *.wiki setlocal spell spelllang=en_gb
 
     " web dev
         " html
