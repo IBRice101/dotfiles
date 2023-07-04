@@ -139,5 +139,6 @@
         function! SetMdFileName()
             let l:filename=expand('%:t')
             let l:filename_without_extension = substitute(l:filename, '\.md$', '','')
-            call setline(1, ['# ' . l:filename_without_extension])
+            let l:filename_without_dashes = substitute(l:filename_without_extension, '-', ' ','g')
+            call setline(1, ['# ' . l:filename_without_dashes])
         endfunction
