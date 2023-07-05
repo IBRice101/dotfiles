@@ -103,6 +103,12 @@
         " spell check for markdown and txt files
             autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_gb
             autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_gb
+        " Set tab spacing to 2 spaces when editing Markdown files
+            augroup MarkdownSettings
+                autocmd!
+                autocmd FileType markdown setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+            augroup END
+
 
     " web dev
         " html
