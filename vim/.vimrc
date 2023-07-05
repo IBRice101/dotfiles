@@ -137,14 +137,15 @@
             autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
             autocmd BufNewFile *.html 0r ~/.vim/templates/skeleton.html
             autocmd BufNewFile *.java 0r ~/.vim/templates/skeleton.java
-            autocmd BufNewFile *.md call SetMdFileName()
+            autocmd BufNewFile *.md call SetMdBoilerplate()
         augroup END
 
     " function for automatically adding the title to a Markdown document from
     " the filename
-        function! SetMdFileName()
-            let l:filename=expand('%:t')
-            let l:filename_without_extension = substitute(l:filename, '\.md$', '','')
-            let l:filename_without_dashes = substitute(l:filename_without_extension, '-', ' ','g')
+        function! SetMdBoilerplate()
+            let l:filename = expand('%:t')
+            let l:filename_without_extension = substitute(l:filename, '\.md$', '', '')
+            let l:filename_without_dashes = substitute(l:filename_without_extension, '-', ' ', 'g')
             call setline(1, ['# ' . l:filename_without_dashes])
         endfunction
+
