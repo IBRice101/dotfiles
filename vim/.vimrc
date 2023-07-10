@@ -109,7 +109,6 @@
                 autocmd FileType markdown setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
             augroup END
 
-
     " web dev
         " html
             " execute html file from html file
@@ -137,6 +136,7 @@
             autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
             autocmd BufNewFile *.html 0r ~/.vim/templates/skeleton.html
             autocmd BufNewFile *.java 0r ~/.vim/templates/skeleton.java
+            autocmd BufNewFile *.qa.md 0r ~/.vim/templates/skeleton.qa.md
             autocmd BufNewFile *.md call SetMdBoilerplate()
         augroup END
 
@@ -148,4 +148,3 @@
             let l:filename_without_dashes = substitute(l:filename_without_extension, '-', ' ', 'g')
             call setline(1, ['# ' . l:filename_without_dashes])
         endfunction
-
